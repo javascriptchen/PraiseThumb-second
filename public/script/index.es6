@@ -1,15 +1,11 @@
-let f = "";
 class PraiseButton {
 	constructor(num, element) {
 		this.num = num;
 		this.element = element;
 	}
 	clickAction() {
-		this.element.click(() => {
-			if (f) {
-				clearTimeout(f);
-			}
-			f = setTimeout(() => {
+		this.element.click(
+			this.throttle(() => {
 				if (this.num < 10) {
 					this.element.css("-webkit-filter", "grayscale(0)");
 					$("#animation").addClass("num");
@@ -29,9 +25,16 @@ class PraiseButton {
 					this.num = 0;
 				}
 				console.log(this.num);
-			}, 800);
+			}, 500)
+		);
+	}
 
-		});
+	throttle(fn, wait) {
+		var timer;
+		return (...args) => {
+			timer = setTimeout(() => timer = null, wait);
+			return fn.apply(this, args);
+		};
 	}
 }
 
