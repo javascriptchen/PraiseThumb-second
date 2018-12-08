@@ -36,5 +36,6 @@ module.exports = {
             "args": "after-used"
         }],
         'no-console': 'off',
+        "no-undef":[0]
     }
 };

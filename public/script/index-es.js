@@ -39,6 +39,7 @@ var PraiseButton = function () {
 						setTimeout(function () {
 							$("#animation").removeClass("num");
 						}, 1000);
+						axios.get("/index/update").then(function (res) {}).catch(function (err) {});
 					} else {
 						_this.element.css("-webkit-filter", "grayscale(1)");
 						_this.num = 0;
