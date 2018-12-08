@@ -23,3 +23,5 @@ app.context.render = co.wrap(render({
 app.listen(CONFIG.get("port"), () => {
 	console.log("server is running");
 });
+
+export default app;
