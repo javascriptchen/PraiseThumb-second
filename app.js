@@ -1,5 +1,9 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+
 var _koa = require("koa");
 
 var _koa2 = _interopRequireDefault(_koa);
@@ -53,3 +57,5 @@ app.context.render = _co2.default.wrap((0, _koaSwig2.default)({
 app.listen(_config2.default.get("port"), function () {
 	console.log("server is running");
 });
+
+exports.default = app;

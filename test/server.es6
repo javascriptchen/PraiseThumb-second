@@ -11,7 +11,7 @@ describe("点赞测试", function() {
 			.get("/index/update")
 			.expect(200)
 			.end(function (err, res) {
-				if (res.data == 1) return done(err);
+				if (res.result == 1) return done(err);
 				done();
 			});
 	});
